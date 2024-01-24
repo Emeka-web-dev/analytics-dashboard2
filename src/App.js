@@ -1,24 +1,29 @@
 import logo from './logo.svg';
-import './App.css';
+import './index.css'
+import DashboardLayout from './layout/Layout';
+import { ConfigProvider } from 'antd';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ConfigProvider
+    theme={{
+      token: {
+        primary: "#34CAA5",
+        secondary: "#0D062D",
+        grey: "#F7F8FA",
+        lightGrey: "#FAFAFA",
+        borderRadius: '14px',
+        mainDark: "#0D0F11",
+        subDark: "#191D23"
+      },
+    }}
+  >
+      <DashboardLayout>
+        <div className=" ">
+        <p className='dark:!bg-subDark dark:text-white text-zinc-800 !bg-white'>hello guys</p>
+        </div>
+      </DashboardLayout>
+    </ConfigProvider>
   );
 }
 

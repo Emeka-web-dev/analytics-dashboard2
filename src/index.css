@@ -1,13 +1,80 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* For sidebar */
+.ant-menu-item{
+  margin-bottom: 16px !important;
+  color: grey !important;
+  margin-left: 0 !important;
+  width: 100% !important;
+  border-radius: 0 !important;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.ant-menu-item-selected, .ant-menu-item:hover{
+  color: #0D062D !important;
+  background-color: transparent !important;
+  border-right: 3px solid #0D062D;
+}
+
+.dark .ant-menu-item-selected, .dark .ant-menu-item:hover{
+  color: #fff !important;
+  border-right: 3px solid #fff;
+}
+
+.ant-menu-item-selected .icon, .ant-menu-item:hover .icon {
+  filter: brightness(0);
+  transition: filter 0.3s ease;
+}
+.dark .ant-menu-item-selected .icon, .dark .ant-menu-item:hover .icon {
+  filter: brightness(1.5);
+  transition: filter 0.3s ease;
+}
+
+.toggle-icon{
+  filter: brightness(1.5);
+  transition: filter 0.3s ease;
+}
+.header-icon{
+  filter: brightness(8.5);
+  transition: filter 0.3s ease;
+}
+.dark-icon{
+  filter: brightness(0.6);
+  transition: filter 0.3s ease;
+}
+
+
+@media (max-width: 768px) {
+  .ant-menu-item{
+    padding-inline: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  .ant-menu-title-content{
+    display: none !important;
+  }
+}
+
+/* For Scrollbar */
+/* width */
+::-webkit-scrollbar {
+  width: 1px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #EBECF2; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #b9b9b9; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
 }
