@@ -13,6 +13,9 @@ module.exports = {
         mainDark: "#0D0F11",
         subDark: "#191D23",
         textDefault: "#26282C"
+      },
+      screens: {
+        tab: '991px'
       }
     },
   },

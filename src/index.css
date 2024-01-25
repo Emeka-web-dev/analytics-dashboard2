@@ -36,9 +36,9 @@
   filter: brightness(1.5);
   transition: filter 0.3s ease;
 }
-.header-icon{
-  filter: brightness(8.5);
-  transition: filter 0.3s ease;
+.dark .header-icon{
+  filter: brightness(8.5) !important;
+  transition: filter 0.3s ease !important;
 }
 .dark-icon{
   filter: brightness(0.6);
@@ -61,7 +61,7 @@
 /* For Scrollbar */
 /* width */
 ::-webkit-scrollbar {
-  width: 1px;
+  width: 0px;
 }
 
 /* Track */
@@ -77,4 +77,12 @@
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555; 
+}
+
+/* For column chart */
+.apexcharts-menu-icon{
+  display: none;
+}
+.apexcharts-tooltip.apexcharts-active {
+  z-index: 130 !important;
 }

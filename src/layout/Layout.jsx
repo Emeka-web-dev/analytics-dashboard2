@@ -4,23 +4,23 @@ import dark from '../assets/dark.svg';
 import light from '../assets/light.svg';
 import useDarkMode from '../hooks/useDarkMode';
 import { bottomMenu, menu } from '../data/menu';
-import { Layout, Menu, theme } from 'antd';
+import { Layout, Menu } from 'antd';
 import DashboardHeader from '../components/Header';
 const { Content, Sider } = Layout;
 
-const DashboardLayout = ({ ...props }) => {
-  const {
-    token: { grey, lightGrey, primary, borderRadius, mainDark, subDark },
-  } = theme.useToken();
-
+const DashboardLayout = ({ LSTheme, setLSTheme, ...props }) => {
+  // const {
+  //   token: { grey, lightGrey, primary, borderRadius, mainDark, subDark },
+  // } = theme.useToken();
   const { setTheme } = useDarkMode();
-  const [LSTheme, setLSTheme] = useState(localStorage.theme);
   const [selectedKeys, setSelectedKeys] = useState('1');
 
+  // Keep track of active/selected menu item
   const handleMenuClick = ({ key }) => {
     setSelectedKeys(key);
   };
 
+  // Theme toggler function
   const handleToggleTheme = (theme) => {
     setTheme(theme);
     setLSTheme(theme);
@@ -33,7 +33,7 @@ const DashboardLayout = ({ ...props }) => {
       }}>
       <Sider
         breakpoint='md'
-        className='dark:!bg-subDark !bg-grey border-r dark:!border-r-gray-900 !border-r-[#EBECF2] !fixed h-full overflow-auto'>
+        className='dark:!bg-subDark !bg-grey border-r dark:!border-r-transparent !border-r-[#EBECF2] !fixed h-full overflow-auto'>
         <div className='grid place-content-center py-5'>
           <img src={logo} alt='logo icon' className='w-10 h-10' />
         </div>
@@ -83,7 +83,7 @@ const DashboardLayout = ({ ...props }) => {
         </div>
         <Menu
           theme='light'
-          className='dark:!bg-subDark !bg-grey border-r dark:!border-gray-900 !border-[#EBECF2] mt-10'
+          className='dark:!bg-subDark !bg-grey border-r dark:!border-gray-900 !border-[#EBECF2] mt-10 [@media(min-height:740px)]:fixed [@media(min-height:740px)]:bottom-10 [@media(min-height:740px)]:w-[200px] [@media(min-height:740px)_and_(max-width:768px)]:!w-[80px]'
           mode='inline'
           selectedKeys={[selectedKeys]}
           items={bottomMenu}
@@ -96,7 +96,10 @@ const DashboardLayout = ({ ...props }) => {
           <div
             className='dark:bg-mainDark bg-lightGrey !ml-[80px] md:!ml-[200px]'
             style={{
-              padding: 24,
+              paddingLeft: 20,
+              paddingRight: 20,
+              paddingBottom: 20,
+              paddingTop: 125,
               minHeight: '100vh',
             }}>
             {props.children}
