@@ -6,7 +6,6 @@ import StatsCard from './components/StatsCard';
 import { stats } from './data/stats';
 import ColumnChart from './components/ColumnChart';
 import { useState } from 'react';
-import useDarkMode from './hooks/useDarkMode';
 
 function App ()
 {

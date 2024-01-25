@@ -121,28 +121,28 @@ const DashboardHeader = ({ LSTheme }) => {
                   aria-labelledby='dropdownDefaultButton'>
                   <li>
                     <a
-                      href='#'
+                      href='/'
                       className='block px-4 py-2 hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-600 '>
                       Dashboard
                     </a>
                   </li>
                   <li>
                     <a
-                      href='#'
+                      href='/'
                       className='block px-4 py-2 hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-600 '>
                       Settings
                     </a>
                   </li>
                   <li>
                     <a
-                      href='#'
+                      href='/'
                       className='block px-4 py-2 hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-600 '>
                       Customers
                     </a>
                   </li>
                   <li>
                     <a
-                      href='#'
+                      href='/'
                       className='block px-4 py-2 hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-600 '>
                       Sign out
                     </a>
