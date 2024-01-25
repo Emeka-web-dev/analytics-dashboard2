@@ -11,7 +11,7 @@ function App ()
 {
   const [sortedValue, setSortedValue] = useState('Monthly');
 
-  const [LSTheme, setLSTheme] = useState(localStorage.theme);
+  const [LSTheme, setLSTheme] = useState(localStorage.theme || 'light');
 
   const items = [
     {
