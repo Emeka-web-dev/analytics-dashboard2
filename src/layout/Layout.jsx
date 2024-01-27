@@ -115,7 +115,7 @@ const DashboardLayout = ({ LSTheme, setLSTheme, ...props }) => {
         </div>
         <Menu
           theme='light'
-          className='dark:!bg-subDark !bg-grey border-r dark:!border-gray-900 !border-[#EBECF2] mt-10 [@media(min-height:740px)]:fixed [@media(min-height:740px)]:bottom-10 [@media(min-height:740px)]:w-[200px] [@media(min-height:740px)_and_(max-width:768px)]:!w-[80px]'
+          className='dark:!bg-subDark !bg-grey border-r dark:!border-gray-900 !border-[#EBECF2] mt-10 [@media(min-height:900px)]:fixed [@media(min-height:900px)]:bottom-10 [@media(min-height:900px)]:w-[200px] [@media(min-height:900px)_and_(max-width:768px)]:!w-[80px]'
           mode='inline'
           selectedKeys={[selectedKeys]}
           items={bottomMenu}
