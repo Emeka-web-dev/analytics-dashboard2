@@ -3,12 +3,13 @@ import calendar from '../assets/calendar.svg';
 import notificationIcon from '../assets/notification.svg';
 import justin from '../assets/justin.svg';
 import hamburger from '../assets/hamburger.svg';
+import show from '../assets/show.png';
 import arrowDown from '../assets/arrowDown.svg';
 import { Badge, Drawer, Input, notification } from 'antd';
 import { Header } from 'antd/es/layout/layout';
 import { useState } from 'react';
 
-const DashboardHeader = ({ LSTheme }) => {
+const DashboardHeader = ({ LSTheme, toggleSidebar, collapsed }) => {
   const [open, setOpen] = useState(false);
   const [api, contextHolder] = notification.useNotification();
   const showDrawer = () => {
@@ -36,7 +37,10 @@ const DashboardHeader = ({ LSTheme }) => {
 
   return (
     <Header
-      className='!bg-lightGrey dark:!bg-subDark border-b dark:!border-gray-800 !border-[#E5EAEF] !ml-[80px] md:!ml-[200px] !fixed !w-[calc(100%-80px)] md:!w-[calc(100%-200px)] z-20'
+      className={`!bg-lightGrey dark:!bg-subDark border-b dark:!border-gray-800 !border-[#E5EAEF] !fixed w-full z-20 ${
+        !collapsed &&
+        '!w-[calc(100%-80px)] !ml-[80px] md:!ml-[200px] md:!w-[calc(100%-200px)]'
+      }`}
       style={{
         padding: '20px',
         height: 'auto',
@@ -44,17 +48,34 @@ const DashboardHeader = ({ LSTheme }) => {
       }}>
       {contextHolder}
       <div className='flex items-center justify-between dark:text-white text-zinc-800'>
-        <div>
-          <h1 className='text-xl font-semibold'>Dashboard</h1>
-          <div className='md:hidden flex items-center gap-[10px]'>
-            <img
-              src={calendar}
-              alt='calendar icon'
-              className={`header-icon w-4 h-4`}
-            />
-            <p className='text-xs'>{currentDate}</p>
+        <div className=' flex items-center gap-3'>
+          {collapsed && (
+            <div
+              onClick={toggleSidebar}
+              className='cursor-pointer hover:scale-105 transition-all ease-in-out duration-300'>
+              <img
+                src={show}
+                alt='theme icon'
+                className={`w-8 h-8 ${
+                  LSTheme === 'dark' ? 'toggle-icon' : 'dark-icon'
+                }`}
+              />
+            </div>
+          )}
+          <div>
+            <h1 className='text-xl font-semibold'>Dashboard</h1>
+
+            <div className='md:hidden flex items-center gap-[10px]'>
+              <img
+                src={calendar}
+                alt='calendar icon'
+                className={`header-icon w-4 h-4`}
+              />
+              <p className='text-xs'>{currentDate}</p>
+            </div>
           </div>
         </div>
+
         <div className='flex gap-[22px] '>
           <div className='hidden lg:block'>
             <Input

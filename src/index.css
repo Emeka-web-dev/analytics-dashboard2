@@ -1,7 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
 
+body {
+  overflow-x: hidden;
+}
+
+*{
+  font-family:'Plus Jakarta Sans', sans-serif;
+}
 
 /* For sidebar */
 .ant-menu-item{
@@ -40,9 +48,16 @@
   filter: brightness(8.5) !important;
   transition: filter 0.3s ease !important;
 }
+.dark .anticon.anticon-caret-up.ant-table-column-sorter-up svg, .dark .anticon.anticon-caret-down.ant-table-column-sorter-down svg, .dark .anticon.anticon-filter svg{
+  fill: #fff;
+}
 .dark-icon{
   filter: brightness(0.6);
   transition: filter 0.3s ease;
+}
+
+.ant-btn-primary{
+  background-color: #34CAA5;
 }
 
 
@@ -71,12 +86,12 @@
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #b9b9b9; 
+  background: #34CAA5; 
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: #239377; 
 }
 
 /* For column chart */
@@ -85,4 +100,45 @@
 }
 .apexcharts-tooltip.apexcharts-active {
   z-index: 130 !important;
+}
+
+.arrow_box{
+  padding: 5px !important;
+}
+
+/* For table */
+.dark .ant-table-container, .dark .ant-table-header, .dark .ant-table-wrapper .ant-table-thead >tr>th, .dark .ant-table-wrapper .ant-table-cell-fix-right{
+  background: #191D23 !important;
+  color: white !important;
+}
+
+.dark .ant-table-cell-row-hover{
+  background: #34CAA51A !important;
+}
+
+.ant-table-column-sort{
+  background-color: #34CAA51A !important;
+}
+
+/* For modal */
+.dark .ant-modal-content {
+  background-color: #191D23;
+  color:#fff;
+}
+.dark .ant-btn-default{
+  color: #fff;
+}
+
+/* for drawer */
+.dark .anticon.anticon-close svg {
+  fill: #fff
+}
+
+/* For notification */
+.dark .ant-notification-notice{
+  background-color: #191d23b7;
+}
+
+.dark .ant-notification-notice-message, .dark .ant-notification-notice-description{
+  color: #fff !important;
 }

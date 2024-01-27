@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from '../assets/logo.svg';
 import dark from '../assets/dark.svg';
 import light from '../assets/light.svg';
+import hide from '../assets/hide.png';
 import useDarkMode from '../hooks/useDarkMode';
 import { bottomMenu, menu } from '../data/menu';
-import { Layout, Menu } from 'antd';
+import { Button, Layout, Menu } from 'antd';
 import DashboardHeader from '../components/Header';
 const { Content, Sider } = Layout;
 
@@ -13,7 +14,23 @@ const DashboardLayout = ({ LSTheme, setLSTheme, ...props }) => {
   //   token: { grey, lightGrey, primary, borderRadius, mainDark, subDark },
   // } = theme.useToken();
   const { setTheme } = useDarkMode();
+  const [collapsed, setCollapsed] = useState(false);
   const [selectedKeys, setSelectedKeys] = useState('1');
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+
+    // Add event listener for window resize
+    window.addEventListener('resize', handleResize);
+
+    // Remove event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   // Keep track of active/selected menu item
   const handleMenuClick = ({ key }) => {
@@ -26,6 +43,10 @@ const DashboardLayout = ({ LSTheme, setLSTheme, ...props }) => {
     setLSTheme(theme);
   };
 
+  const toggleSidebar = () => {
+    setCollapsed(!collapsed);
+  };
+
   return (
     <Layout
       style={{
@@ -33,7 +54,21 @@ const DashboardLayout = ({ LSTheme, setLSTheme, ...props }) => {
       }}>
       <Sider
         breakpoint='md'
-        className='dark:!bg-subDark !bg-grey border-r dark:!border-r-transparent !border-r-[#EBECF2] !fixed h-full overflow-auto'>
+        width={screenWidth < 768 ? 80 : 200}
+        collapsedWidth={0}
+        collapsed={collapsed}
+        className='dark:!bg-subDark !bg-grey border-r dark:!border-r-transparent !border-r-[#EBECF2] !fixed h-full overflow-y-auto overflow-x-hidden z-30'>
+        <div
+          onClick={toggleSidebar}
+          className='md:hidden p-5 rounded-full flex justify-center cursor-pointer hover:scale-105 transition-all ease-in-out duration-300'>
+          <img
+            src={hide}
+            alt='theme icon'
+            className={`w-8 h-8 ${
+              LSTheme === 'dark' ? 'toggle-icon' : 'dark-icon'
+            }`}
+          />
+        </div>
         <div className='grid place-content-center py-5'>
           <img src={logo} alt='logo icon' className='w-10 h-10' />
         </div>
@@ -91,10 +126,16 @@ const DashboardLayout = ({ LSTheme, setLSTheme, ...props }) => {
         />
       </Sider>
       <Layout>
-        <DashboardHeader LSTheme={LSTheme} />
+        <DashboardHeader
+          LSTheme={LSTheme}
+          toggleSidebar={toggleSidebar}
+          collapsed={collapsed}
+        />
         <Content>
           <div
-            className='dark:bg-mainDark bg-lightGrey !ml-[80px] md:!ml-[200px]'
+            className={`dark:bg-mainDark bg-lightGrey ${
+              !collapsed && '!ml-[80px] md:!ml-[200px]'
+            }`}
             style={{
               paddingLeft: 20,
               paddingRight: 20,

@@ -12,12 +12,12 @@ const ColumnChart = ({LSTheme}) => {
     chart: {
       type: 'bar',
     },
-    events: {
-      mounted: (chartContext, config) => {
-        chartContext.w.globals.stickyXAxisCrosshairs = false;
-        chartContext.appendXaxisCrosshairs();
-      },
-    },
+    // events: {
+    //   mounted: (chartContext, config) => {
+    //     chartContext.w.globals.stickyXAxisCrosshairs = false;
+    //     chartContext.appendXaxisCrosshairs();
+    //   },
+    // },
     fill: {
       colors: ['#34CAA51A'],
     },
@@ -67,9 +67,14 @@ const ColumnChart = ({LSTheme}) => {
             opacityFrom: 1,
             opacityTo: 0.3,
           },
+          borderRadius: 15
         },
         style: {
           borderRadius: 15
+        },
+        x: {
+          show: true,
+          offsetX: 0
         }
       },
       axisBorder: {
@@ -82,6 +87,7 @@ const ColumnChart = ({LSTheme}) => {
         style: {
           colors: `${LSTheme === 'dark' ? '#bebebe' : '#525252ab' }` ,
           fontSize: '14px',
+          fontFamily: 'Plus Jakarta Sans'
         },
       },
     },
@@ -90,9 +96,21 @@ const ColumnChart = ({LSTheme}) => {
         style: {
           colors: `${LSTheme === 'dark' ? '#bebebe' : '#525252ab' }` ,
           fontSize: '12px',
+          fontFamily: 'Plus Jakarta Sans'
         },
       },
-    }
+    },
+    // tooltip: {
+    //   custom: function({series, seriesIndex, dataPointIndex, w}) {
+    //     return '<div class="arrow_box">' +
+    //       '<span>' + series[seriesIndex][dataPointIndex] + '</span>' +
+    //       '</div>'
+    //   }
+    //   // x: {
+    //   //   show: false
+    //   // }
+    // }
+    
   };
   return (
     <ReactApexChart

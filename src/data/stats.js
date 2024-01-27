@@ -50,7 +50,20 @@ const options = {
     name: 'Total',
     data: randomizeArray(sparklineData)
   }],
-  labels: [...Array(24).keys()].map(n => `2018-09-0${ n + 1 }`)
+  labels: [...Array(24).keys()].map(n => `2018-09-0${ n + 1 }`),
+  tooltip: {
+    x: {
+      show: false
+    },
+    fixed: {
+      enabled: true,
+      position: 'topRight',
+      offsetX: 20,
+      offsetY: -40,
+    }
+  },
+
+
 };
 
 
@@ -60,21 +73,39 @@ export const stats = [
     title: 'Total Order',
     value: '350',
     increase: true,
-    options: options,
+    options: {
+      ...options, series: [{
+        name: 'Total Order',
+        data: randomizeArray(sparklineData)
+      }]
+    },
     icon: <img src={ totalOrder } alt='stats icon' />
   },
   {
     id: 2,
     title: 'Total Refund',
     value: '270',
-    options: { ...options, colors: ['#ED544E'] },
+    options: {
+      ...options, colors: ['#ED544E'], series: [{
+        name: 'Total Refund',
+        data: randomizeArray(sparklineData)
+      }]
+    },
     icon: <img src={ totalRefund } alt='stats icon' />
   },
+];
+
+export const bottomStats = [
   {
     id: 3,
     title: 'Average Sales',
     value: '1567',
-    options: { ...options, colors: ['#ED544E'] },
+    options: {
+      ...options, colors: ['#ED544E'], series: [{
+        name: 'Average Sales',
+        data: randomizeArray(sparklineData)
+      }]
+    },
     icon: <img src={ averageSales } alt='stats icon' />
   },
   {
@@ -82,7 +113,12 @@ export const stats = [
     title: 'Total Income',
     value: '350.000',
     increase: true,
-    options: options,
+    options: {
+      ...options, series: [{
+        name: 'Total Income',
+        data: randomizeArray(sparklineData)
+      }]
+    },
     icon: <img src={ totalIncome } alt='stats icon' />
   },
 ];
