@@ -81,7 +81,7 @@ function App ()
                   </Dropdown>
                 </div>
               </div>
-              <ColumnChart LSTheme={ LSTheme } />
+              <ColumnChart LSTheme={ LSTheme } sortedValue={ sortedValue } />
             </div>
           </Col>
           <Col className='flex flex-col gap-5 tab:pl-5 pt-5 tab:pt-0' xs={ 24 } lg={ 9 }>
