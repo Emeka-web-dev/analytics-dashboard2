@@ -5,14 +5,11 @@ import light from '../assets/light.svg';
 import hide from '../assets/hide.png';
 import useDarkMode from '../hooks/useDarkMode';
 import { bottomMenu, menu } from '../data/menu';
-import { Button, Layout, Menu } from 'antd';
+import { Layout, Menu } from 'antd';
 import DashboardHeader from '../components/Header';
 const { Content, Sider } = Layout;
 
 const DashboardLayout = ({ LSTheme, setLSTheme, ...props }) => {
-  // const {
-  //   token: { grey, lightGrey, primary, borderRadius, mainDark, subDark },
-  // } = theme.useToken();
   const { setTheme } = useDarkMode();
   const [collapsed, setCollapsed] = useState(false);
   const [selectedKeys, setSelectedKeys] = useState('1');

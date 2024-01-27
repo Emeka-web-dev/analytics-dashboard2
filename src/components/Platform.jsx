@@ -6,7 +6,7 @@ const Platform = () => {
     <div className='dark:!bg-subDark !bg-white rounded-[14px] p-4'>
       <div className='flex items-center justify-between mb-5'>
         <h2 className='text-lg font-semibold'>Top Platform</h2>
-        <a className='text-primary text-lg font-medium hover:text-emerald-500 hover:underline transition-all ease-in-out duration-300'>
+        <a href="/" className='text-primary text-lg font-medium hover:text-emerald-500 hover:underline transition-all ease-in-out duration-300'>
           See All
         </a>
       </div>

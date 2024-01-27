@@ -130,7 +130,7 @@ function App ()
           <Col className='dark:!bg-subDark !bg-white rounded-[14px] p-4 pb-0' xs={ 24 } lg={ 15 }>
             <div className='flex items-center justify-between mb-[14px]'>
               <h2 className='text-lg font-semibold'>Last Orders</h2>
-              <a className='text-primary text-lg font-medium hover:text-emerald-500 hover:underline transition-all ease-in-out duration-300'>See All</a>
+              <a href='/' className='text-primary text-lg font-medium hover:text-emerald-500 hover:underline transition-all ease-in-out duration-300'>See All</a>
             </div>
             <OrderTable />
           </Col>

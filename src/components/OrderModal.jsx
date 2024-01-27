@@ -76,7 +76,7 @@ const OrderModal = ({isModalOpen, handleOk, handleCancel}) => {
       <div class='border-t-2 border-gray-300 pt-8 mb-8'>
         <div class='text-gray-700 dark:text-gray-200 mb-2'>
           Credit:{' '}
-          <a href='https://tailwindflex.com/@007-davis' target='_blank'>
+          <a href='https://tailwindflex.com/@007-davis' target='_blank' rel="noreferrer">
             Elijah Davis
           </a>
         </div>

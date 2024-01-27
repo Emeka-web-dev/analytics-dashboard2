@@ -1,4 +1,4 @@
-import { Modal, Table, Tooltip } from 'antd';
+import { Table, Tooltip } from 'antd';
 import View from '../assets/view.svg';
 import Marcus from '../assets/marcus.svg';
 import Jaydon from '../assets/jaydon.svg';
