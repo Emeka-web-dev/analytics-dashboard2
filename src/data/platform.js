@@ -31,4 +31,4 @@ export const platformData = [
     increase: '5',
     color: '#FF4A55'
   },
-]
+];

@@ -42,7 +42,7 @@ function App ()
   return (
     <ConfigProvider
       theme={ {
-        components:{
+        components: {
           Table: {
             headerBg: "#FFF",
             headerSplitColor: "transparent",

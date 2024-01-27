@@ -1,5 +1,5 @@
 import ReactApexChart from 'react-apexcharts';
-const ColumnChart = ({LSTheme}) => {
+const ColumnChart = ({ LSTheme }) => {
   const options = {
     series: [
       {
@@ -12,12 +12,6 @@ const ColumnChart = ({LSTheme}) => {
     chart: {
       type: 'bar',
     },
-    // events: {
-    //   mounted: (chartContext, config) => {
-    //     chartContext.w.globals.stickyXAxisCrosshairs = false;
-    //     chartContext.appendXaxisCrosshairs();
-    //   },
-    // },
     fill: {
       colors: ['#34CAA51A'],
     },
@@ -67,15 +61,15 @@ const ColumnChart = ({LSTheme}) => {
             opacityFrom: 1,
             opacityTo: 0.3,
           },
-          borderRadius: 15
+          borderRadius: 15,
         },
         style: {
-          borderRadius: 15
+          borderRadius: 15,
         },
         x: {
           show: true,
-          offsetX: 0
-        }
+          offsetX: 0,
+        },
       },
       axisBorder: {
         show: false,
@@ -85,32 +79,21 @@ const ColumnChart = ({LSTheme}) => {
       },
       labels: {
         style: {
-          colors: `${LSTheme === 'dark' ? '#bebebe' : '#525252ab' }` ,
+          colors: `${LSTheme === 'dark' ? '#bebebe' : '#525252ab'}`,
           fontSize: '14px',
-          fontFamily: 'Plus Jakarta Sans'
+          fontFamily: 'Plus Jakarta Sans',
         },
       },
     },
     yaxis: {
       labels: {
         style: {
-          colors: `${LSTheme === 'dark' ? '#bebebe' : '#525252ab' }` ,
+          colors: `${LSTheme === 'dark' ? '#bebebe' : '#525252ab'}`,
           fontSize: '12px',
-          fontFamily: 'Plus Jakarta Sans'
+          fontFamily: 'Plus Jakarta Sans',
         },
       },
     },
-    // tooltip: {
-    //   custom: function({series, seriesIndex, dataPointIndex, w}) {
-    //     return '<div class="arrow_box">' +
-    //       '<span>' + series[seriesIndex][dataPointIndex] + '</span>' +
-    //       '</div>'
-    //   }
-    //   // x: {
-    //   //   show: false
-    //   // }
-    // }
-    
   };
   return (
     <ReactApexChart

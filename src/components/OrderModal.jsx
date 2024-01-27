@@ -1,7 +1,7 @@
-import { Modal } from "antd";
+import { Modal } from 'antd';
 import Logo from '../assets/logo.svg';
 
-const OrderModal = ({isModalOpen, handleOk, handleCancel}) => {
+const OrderModal = ({ isModalOpen, handleOk, handleCancel }) => {
   const currentDate = new Date().toLocaleDateString('en-US', {
     month: 'long',
     day: 'numeric',
@@ -76,7 +76,10 @@ const OrderModal = ({isModalOpen, handleOk, handleCancel}) => {
       <div class='border-t-2 border-gray-300 pt-8 mb-8'>
         <div class='text-gray-700 dark:text-gray-200 mb-2'>
           Credit:{' '}
-          <a href='https://tailwindflex.com/@007-davis' target='_blank' rel="noreferrer">
+          <a
+            href='https://tailwindflex.com/@007-davis'
+            target='_blank'
+            rel='noreferrer'>
             Elijah Davis
           </a>
         </div>

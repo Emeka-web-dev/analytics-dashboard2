@@ -7,12 +7,12 @@ body {
   overflow-x: hidden;
 }
 
-*{
-  font-family:'Plus Jakarta Sans', sans-serif;
+* {
+  font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 /* For sidebar */
-.ant-menu-item{
+.ant-menu-item {
   margin-bottom: 16px !important;
   color: grey !important;
   margin-left: 0 !important;
@@ -20,55 +20,60 @@ body {
   border-radius: 0 !important;
 }
 
-.ant-menu-item-selected, .ant-menu-item:hover{
-  color: #0D062D !important;
+.ant-menu-item-selected,
+.ant-menu-item:hover {
+  color: #0d062d !important;
   background-color: transparent !important;
-  border-right: 3px solid #0D062D;
+  border-right: 3px solid #0d062d;
 }
 
-.dark .ant-menu-item-selected, .dark .ant-menu-item:hover{
+.dark .ant-menu-item-selected,
+.dark .ant-menu-item:hover {
   color: #fff !important;
   border-right: 3px solid #fff;
 }
 
-.ant-menu-item-selected .icon, .ant-menu-item:hover .icon {
+.ant-menu-item-selected .icon,
+.ant-menu-item:hover .icon {
   filter: brightness(0);
   transition: filter 0.3s ease;
 }
-.dark .ant-menu-item-selected .icon, .dark .ant-menu-item:hover .icon {
+.dark .ant-menu-item-selected .icon,
+.dark .ant-menu-item:hover .icon {
   filter: brightness(1.5);
   transition: filter 0.3s ease;
 }
 
-.toggle-icon{
+.toggle-icon {
   filter: brightness(1.5);
   transition: filter 0.3s ease;
 }
-.dark .header-icon{
+.dark .header-icon {
   filter: brightness(8.5) !important;
   transition: filter 0.3s ease !important;
 }
-.dark .anticon.anticon-caret-up.ant-table-column-sorter-up svg, .dark .anticon.anticon-caret-down.ant-table-column-sorter-down svg, .dark .anticon.anticon-filter svg{
+.dark .anticon.anticon-caret-up.ant-table-column-sorter-up svg,
+.dark .anticon.anticon-caret-down.ant-table-column-sorter-down svg,
+.dark .anticon.anticon-filter svg {
   fill: #fff;
 }
-.dark-icon{
+.dark-icon {
   filter: brightness(0.6);
   transition: filter 0.3s ease;
 }
 
-.ant-btn-primary{
-  background-color: #34CAA5;
+.ant-btn-primary {
+  background-color: #34caa5;
 }
 
-
 @media (max-width: 768px) {
-  .ant-menu-item{
+  .ant-menu-item {
     padding-inline: 0 !important;
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
   }
-  .ant-menu-title-content{
+  .ant-menu-title-content {
     display: none !important;
   }
 }
@@ -81,64 +86,68 @@ body {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #EBECF2; 
+  background: #ebecf2;
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #34CAA5; 
+  background: #34caa5;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #239377; 
+  background: #239377;
 }
 
 /* For column chart */
-.apexcharts-menu-icon{
+.apexcharts-menu-icon {
   display: none;
 }
 .apexcharts-tooltip.apexcharts-active {
   z-index: 130 !important;
 }
 
-.arrow_box{
+.arrow_box {
   padding: 5px !important;
 }
 
 /* For table */
-.dark .ant-table-container, .dark .ant-table-header, .dark .ant-table-wrapper .ant-table-thead >tr>th, .dark .ant-table-wrapper .ant-table-cell-fix-right{
-  background: #191D23 !important;
+.dark .ant-table-container,
+.dark .ant-table-header,
+.dark .ant-table-wrapper .ant-table-thead > tr > th,
+.dark .ant-table-wrapper .ant-table-cell-fix-right {
+  background: #191d23 !important;
   color: white !important;
 }
 
-.dark .ant-table-cell-row-hover{
-  background: #34CAA51A !important;
+.dark .ant-table-cell-row-hover {
+  background: #34caa51a !important;
 }
 
-.ant-table-column-sort{
-  background-color: #34CAA51A !important;
+.ant-table-column-sort {
+  background-color: #34caa51a !important;
 }
 
 /* For modal */
 .dark .ant-modal-content {
-  background-color: #191D23;
-  color:#fff;
+  background-color: #191d23;
+  color: #fff;
 }
-.dark .ant-btn-default{
+.dark .ant-btn-default {
   color: #fff;
 }
 
 /* for drawer */
 .dark .anticon.anticon-close svg {
-  fill: #fff
+  fill: #fff;
 }
 
 /* For notification */
-.dark .ant-notification-notice{
+.dark .ant-notification-notice {
   background-color: #191d23b7;
 }
 
-.dark .ant-notification-notice-message, .dark .ant-notification-notice-description{
+.dark .ant-notification-notice-message,
+.dark .ant-notification-notice-description {
   color: #fff !important;
 }
