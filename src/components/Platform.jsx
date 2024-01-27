@@ -12,7 +12,7 @@ const Platform = () => {
           See All
         </a>
       </div>
-      <div className='flex flex-col gap-5 h-[350px] overflow-x-hidden overflow-y-auto'>
+      <div className='flex flex-col gap-5 h-[400px] overflow-x-hidden overflow-y-auto'>
         {platformData.map(
           ({ id, title, value, percentage, increase, color }) => (
             <div key={id} className='space-y-3'>

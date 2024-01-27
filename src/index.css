@@ -128,6 +128,14 @@ body {
   background-color: #34caa51a !important;
 }
 
+.dark .ant-pagination-item a{
+  color: #fff !important;
+}
+
+.dark .ant-pagination-item-active {
+  background-color: #34caa5 !important;
+}
+
 /* For modal */
 .dark .ant-modal-content {
   background-color: #191d23;
@@ -138,8 +146,13 @@ body {
 }
 
 /* for drawer */
-.dark .anticon.anticon-close svg {
+.dark .anticon.anticon-close svg, .dark .anticon.anticon-right svg, .dark .anticon.anticon-left svg {
   fill: #fff;
+}
+
+.dark .ant-pagination-disabled .anticon.anticon-left svg, .dark .ant-pagination-disabled .anticon.anticon-right svg
+{
+  fill: #888888 !important;
 }
 
 /* For notification */

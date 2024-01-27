@@ -100,4 +100,23 @@ export const dataSource = [
     status: <p className='text-primary'>Paid</p>,
     invoice: 'View',
   },
+  {
+    key: '6',
+    name: (
+      <div className='flex items-center gap-[10px]'>
+        <img src={Marcus} alt='marcus' className='w-8 h-8' />
+        <p className='truncate'>Alex Lubin</p>
+      </div>
+    ),
+    date: (
+      <p className='text-neutral-500 dark:text-neutral-200'>Nov 12, 2023</p>
+    ),
+    amount: (
+      <p className='text-slate-900 dark:text-slate-200 font-medium'>
+        $95,000
+      </p>
+    ),
+    status: <p className='text-primary'>Paid</p>,
+    invoice: 'View',
+  },
 ];
